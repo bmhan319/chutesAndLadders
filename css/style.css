@@ -144,6 +144,55 @@ span {
   transform: rotate(60deg) translate(-18% ,-32%);
 }
 
+.strong {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.strong1 {
+  top: 68%;
+  left: 50%;
+  transform: rotate(120deg);
+}
+
+.strong2 {
+  top: 68%;
+  left: 50%;
+  transform: rotate(120deg);
+}
+
+.strong3 {
+  top: 68%;
+  left: 30%;
+  transform: rotate(240deg);
+}
+
+.strong4 {
+  top: 68%;
+  left: 50%;
+  transform: rotate(120deg);
+}
+
+.strong5 {
+  top: 48%;
+  left: 40%;
+  transform: rotate(0deg);
+}
+
+.strong6 {
+  top: 50%;
+  left: 40%;
+  transform: rotate(0deg);
+}
+
 .spinButton {
   position: absolute;
   top: 50%;
