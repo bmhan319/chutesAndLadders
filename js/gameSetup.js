@@ -23,6 +23,13 @@ function createBoard() {
     }
     gameBoard.appendChild(row)
   }
+
+  //make ladder
+  for (var i = 1; i < 10; i++) {
+    let ladder = document.createElement('div')
+    ladder.classList.add('ladder', `ladder${i}`)
+    gameBoard.appendChild(ladder) 
+  }
 }
 
 
