@@ -92,7 +92,7 @@ body {
   top: 50%;
   right: -40px;
   transform: translateY(-50%);
-  background: url('/img/left.png') no-repeat;
+  background: url('../img/left.png') no-repeat;
   background-size: 20px;
 }
 
