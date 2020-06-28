@@ -37,4 +37,6 @@ function numPlayers(players) {
 
   section.style.display = "none"
   gameContainer.style.height = "100vh"
+
+  return players
 }
