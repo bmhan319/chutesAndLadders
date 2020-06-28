@@ -1,10 +1,4 @@
-//Blue: 1 - 60
-//Yellow: 61 - 120
-//Purple: 121 - 180
-//Pink: 181 - 240
-//Orange: 241 - 300
-//Red: 301 - 360
-
+//Spin the weheel
 function spin() {
   const spinButton = document.querySelector('.spinButton')
   // min and max need a wide range in order for wheel to spin 
@@ -25,6 +19,13 @@ function spin() {
     deg = deg - 360
   }
 
+  //if 'deg' is within a certain degree range, return color(number) on the spinner
+  //Blue(2): 1 - 60
+  //Yellow(3): 61 - 120
+  //Purple(1): 121 - 180
+  //Pink(6): 181 - 240
+  //Orange(4): 241 - 300
+  //Red(5): 301 - 360
   if (deg <= 60 && deg > 0) {
     result = 2
   } else if (deg <= 120 && deg > 60) {
@@ -38,18 +39,25 @@ function spin() {
   } else if (deg <= 360 && deg > 300) {
     result = 5
   }
+  return result
+}
 
+
+//Move players around the board
+function movePlayer(result) {
   let currentPlayer = players[currentPlayerTurn]
   let oldPosition = currentPlayer.position
   let oldSquare = document.querySelector(`.square${oldPosition}`)
   currentPlayer.position += result
-  let newSquare = document.querySelector(`.square${currentPlayer.position}`)
-  console.log(currentPlayer)
-  console.log(oldSquare)
-  console.log(newSquare)
-
-  oldSquare.removeChild(oldSquare.childNodes[1])
-  let player = document.createElement('div')
-  player.classList.add('player', `player${currentPlayer.id}`)
-  newSquare.appendChild(player)
+  
+  //wait 3.5 seconds before moving pieces to give the spinner enough time to stop
+  //spinner spins for 3 secs.
+  setTimeout( ()=>{
+    let newSquare = document.querySelector(`.square${currentPlayer.position}`)
+    let player = document.createElement('div')
+    oldSquare.removeChild(oldSquare.childNodes[1])
+    player.classList.add('player', `player${currentPlayer.id}`)
+    newSquare.appendChild(player)
+  }, 3500 )
+  
 }
