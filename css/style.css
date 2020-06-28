@@ -35,6 +35,7 @@ body {
   padding-top: 24px;
   display: flex;
   justify-content: space-around;
+  overflow: hidden;
 }
 
 
@@ -328,7 +329,7 @@ span {
 .ladder1 { 
   width: 10vw;
   height: 20vw;
-  bottom: -.5vh;
+  bottom: -.3vw;
   left: 5.5vw;
   transform: skewX(-2deg)
 }
@@ -336,7 +337,7 @@ span {
 .ladder2 { 
   width: 20vw;
   height: 18vw;
-  bottom: -5.5vh;
+  bottom: -4vw;
   left: 16vw;
   transform: skewY(0deg) rotate(55deg)
 }
@@ -344,7 +345,7 @@ span {
 .ladder3 { 
   width: 10vw;
   height: 20vw;
-  bottom: -.5vh;
+  bottom: -.2vw;
   right: .5vw;
   transform: skewX(-2deg) rotate(-3deg)
 }
@@ -352,7 +353,7 @@ span {
 .ladder4 { 
   width: 10vw;
   height: 14vw;
-  bottom: 14vh;
+  bottom: 11vw;
   left: .5vw;
   transform: skewX(-2deg) rotate(5deg)
 }
@@ -360,7 +361,7 @@ span {
 .ladder5 { 
   background: url('../img/ladder_lg.png') no-repeat;
   background-size: contain;
-  bottom: 22vh;
+  bottom: 17vw;
   right: 14vw;
   width: 12vw;
   height: 20vw;
@@ -372,7 +373,7 @@ span {
   background-size: contain;
   width: 10vw;
   height: 10vw;
-  bottom: 22vh;
+  bottom: 17vw;
   left: 18vw;
   transform: rotate(-20deg);
 }
@@ -382,7 +383,7 @@ span {
   background-size: contain;
   width: 10vw;
   height: 15vw;
-  bottom: 33vh;
+  bottom: 25vw;
   right: 5vw;
   transform: rotate(-55deg);
 }
@@ -392,7 +393,7 @@ span {
   background-size: contain;
   width: 10vw;
   height: 12vw;
-  top: 4vh;
+  top: 4vw;
   right: -5vw;
   transform: rotate(18deg);
 }
@@ -402,7 +403,7 @@ span {
   background-size: contain;
   width: 10vw;
   height: 12vw;
-  top: 4vh;
+  top: 4vw;
   left: .3vw;
   transform: rotate(11deg);
 }
