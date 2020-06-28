@@ -10,5 +10,7 @@ let currentPlayerTurn = 0;
 
 function playGame() {
   movePlayer( spin() )
+  checkLadder()
+  checkSlide()
   checkForWin()
 }

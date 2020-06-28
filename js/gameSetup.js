@@ -72,3 +72,45 @@ function resetGame() {
   players[0].position = 1
   createBoard()
 }
+
+
+function checkLadder() {
+  let ladder = [
+    [2,38],
+    [4,14],
+    [9,31],
+    [21,32],
+    [26,84],
+    [36,44],
+    [51,67],
+    [71,90],
+    [80,100]
+  ]
+
+  ladder.forEach( (item) => {
+    if (players[0].position === item[0]) {
+      players[0].position = item[1]
+    }
+  } )
+}
+
+function checkSlide() {
+  let slide = [
+    [16,6],
+    [47,26],
+    [49,11],
+    [56,53],
+    [62,19],
+    [64,60],
+    [87,24],
+    [93,73],
+    [95,75],
+    [98,78]
+  ]
+
+  slide.forEach( (item) => {
+    if (players[0].position === item[0]) {
+      players[0].position = item[1]
+    }
+  } )
+}

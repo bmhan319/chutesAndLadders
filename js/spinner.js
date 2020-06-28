@@ -55,9 +55,13 @@ function movePlayer(result) {
   setTimeout( ()=>{
     let newSquare = document.querySelector(`.square${currentPlayer.position}`)
     let player = document.createElement('div')
+    
+    if (newSquare === null) {
+      newSquare = document.querySelector('.square100')
+    }
+    
     oldSquare.removeChild(oldSquare.childNodes[1])
     player.classList.add('player', `player${currentPlayer.id}`)
     newSquare.appendChild(player)
-  }, 3500 )
-  
+  }, 3500 ) 
 }
