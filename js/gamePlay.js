@@ -10,4 +10,5 @@ let currentPlayerTurn = 0;
 
 function playGame() {
   movePlayer( spin() )
+  checkForWin()
 }

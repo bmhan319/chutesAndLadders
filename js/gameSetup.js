@@ -1,6 +1,8 @@
+let gameBoard = document.querySelector('.gameBoard')
+
 //Create Game Board
 function createBoard() {
-  let gameBoard = document.querySelector('.gameBoard')
+  
   //making the rows
   for (var i = 10; i >= 1; i-- ) {
     let row = document.createElement('div')
@@ -38,4 +40,35 @@ function pickPlayers(players) {
 
   section.style.display = "none"
   gameContainer.style.height = "100vh"
+}
+
+function checkForWin() {
+  if(players[0].position >= 100) {
+    setTimeout( () => {
+      let reset = confirm("You Won! Would you like to play again")
+      if (reset === true) {
+        resetGame()
+      } else {
+        return
+      }
+    }, 3500 )
+  } 
+}
+
+function deleteBoard() {
+  while (gameBoard.firstChild) {
+    gameBoard.removeChild(gameBoard.firstChild)
+  }
+}
+
+function resetGame() {
+  const section = document.querySelector('.numPlayers')
+  const gameContainer = document.querySelector('.gameContainer')
+  
+  deleteBoard()
+  section.style.display = "block"
+  gameContainer.style.height = "height: calc(100vh - 30px)"
+  currentPlayerTurn = 0
+  players[0].position = 1
+  createBoard()
 }
