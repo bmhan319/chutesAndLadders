@@ -38,5 +38,18 @@ function spin() {
   } else if (deg <= 360 && deg > 300) {
     result = 5
   }
-  return result
+
+  let currentPlayer = players[currentPlayerTurn]
+  let oldPosition = currentPlayer.position
+  let oldSquare = document.querySelector(`.square${oldPosition}`)
+  currentPlayer.position += result
+  let newSquare = document.querySelector(`.square${currentPlayer.position}`)
+  console.log(currentPlayer)
+  console.log(oldSquare)
+  console.log(newSquare)
+
+  oldSquare.removeChild(oldSquare.childNodes[1])
+  let player = document.createElement('div')
+  player.classList.add('player', `player${currentPlayer.id}`)
+  newSquare.appendChild(player)
 }

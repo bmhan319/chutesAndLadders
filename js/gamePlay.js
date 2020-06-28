@@ -1,6 +1,9 @@
 window.addEventListener('load', createBoard)
 
-let player1
-let player2
-let player3
-let player4
+let players = [{
+  name: "Player1",
+  id: 1,
+  position: 1
+}]
+
+let currentPlayerTurn = 0;

@@ -1,11 +1,12 @@
-let gameBoard = document.querySelector('.gameBoard')
-
 //Create Game Board
 function createBoard() {
+  let gameBoard = document.querySelector('.gameBoard')
+  //making the rows
   for (var i = 10; i >= 1; i-- ) {
     let row = document.createElement('div')
     row.classList.add('row', `row${i}`)
 
+    //making the columns
     for (var j = 10; j > 0; j--) {
       let square = document.createElement('div')
       let number = document.createElement('h3')
@@ -23,8 +24,8 @@ function createBoard() {
 }
 
 
-//Pick number of PLayers
-function numPlayers(players) {
+//Pick number of Players
+function pickPlayers(players) {
   const square1 = document.querySelector('.square1')
   const section = document.querySelector('.numPlayers')
   const gameContainer = document.querySelector('.gameContainer')
@@ -37,6 +38,4 @@ function numPlayers(players) {
 
   section.style.display = "none"
   gameContainer.style.height = "100vh"
-
-  return players
 }
