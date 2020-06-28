@@ -77,13 +77,44 @@ body {
   padding: .1rem;
 }
 
+.number22,
+.number34,
+.number47,
+.number52,
+.number53,
+.number65,
+.number81 {
+  display: flex;
+  align-items: end;
+  justify-content: start;
+}
+
+.number33,
+.number36,
+.number54,
+.number55,
+.number66 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: end;
+}
+
 .number3,
+.number5,
+.number6,
+.number10,
+.number11,
+.number14,
 .number18,
-.number23 {
+.number23,
+.number30,
+.number39,
+.number51 {
   display: flex;
   align-items: end;
   justify-content: end;
 }
+
 
 
 /* Spinner */
@@ -261,6 +292,11 @@ span {
   width: 30%;
   border: 1px solid #000;
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
 }
 
 .player1 {
@@ -295,4 +331,78 @@ span {
   bottom: -.5vh;
   left: 5.5vw;
   transform: skewX(-2deg)
+}
+
+.ladder2 { 
+  width: 20vw;
+  height: 18vw;
+  bottom: -5.5vh;
+  left: 16vw;
+  transform: skewY(0deg) rotate(55deg)
+}
+
+.ladder3 { 
+  width: 10vw;
+  height: 20vw;
+  bottom: -.5vh;
+  right: .5vw;
+  transform: skewX(-2deg) rotate(-3deg)
+}
+
+.ladder4 { 
+  width: 10vw;
+  height: 14vw;
+  bottom: 14vh;
+  left: .5vw;
+  transform: skewX(-2deg) rotate(5deg)
+}
+
+.ladder5 { 
+  background: url('../img/ladder_lg.png') no-repeat;
+  background-size: contain;
+  bottom: 22vh;
+  right: 14vw;
+  width: 12vw;
+  height: 20vw;
+  transform: scaleY(2) rotate(-35deg) skewY(20deg)
+}
+
+.ladder6 { 
+  background: url('../img/ladder_lg.png') no-repeat;
+  background-size: contain;
+  width: 10vw;
+  height: 10vw;
+  bottom: 22vh;
+  left: 18vw;
+  transform: rotate(-20deg);
+}
+
+.ladder7 { 
+  background: url('../img/ladder_lg.png') no-repeat;
+  background-size: contain;
+  width: 10vw;
+  height: 15vw;
+  bottom: 33vh;
+  right: 5vw;
+  transform: rotate(-55deg);
+}
+
+.ladder8 { 
+  background: url('../img/ladder_lg.png') no-repeat;
+  background-size: contain;
+  width: 10vw;
+  height: 12vw;
+  top: 4vh;
+  right: -5vw;
+  transform: rotate(18deg);
+}
+
+.ladder9 { 
+  background: url('../img/ladder_lg.png') no-repeat;
+  background-size: contain;
+  width: 10vw;
+  height: 12vw;
+  top: 4vh;
+  left: .3vw;
+  transform: rotate(11deg);
 }
