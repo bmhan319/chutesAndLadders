@@ -74,11 +74,13 @@ body {
 
 .spinner {
   border: 2px solid #000;
-  width: 100%;
-  height: 100%;
+  width: 96%;
+  height: 96%;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
+  box-shadow: 2px 2px 6px #333;
+  margin: 2%;
 }
 
 .box1 {
@@ -153,8 +155,9 @@ span {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2em;
   text-shadow: 2px 2px 2px #000;
+  -webkit-text-stroke: 1px #000;
 }
 
 .strong1 {
