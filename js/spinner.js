@@ -45,10 +45,21 @@ function spin() {
 
 //Move players around the board
 function movePlayer(result) {
-  let currentPlayer = players[currentPlayerTurn]
-  let oldPosition = currentPlayer.position
-  let oldSquare = document.querySelector(`.square${oldPosition}`)
+  let currentPlayer
+  let oldPosition
+  let oldSquare
+
+  if (currentPlayerTurn === false) {
+    currentPlayer = players[0]
+  } else {
+    currentPlayer = players[1]
+  }
+
+  oldPosition = currentPlayer.position
+  oldSquare = document.querySelector(`.square${oldPosition}`)
   currentPlayer.position += result
+  currentPlayerTurn = !currentPlayerTurn
+
   
   //wait 3.5 seconds before moving pieces to give the spinner enough time to stop
   //spinner spins for 3 secs.

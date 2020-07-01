@@ -30,25 +30,25 @@ function createBoard() {
     ladder.classList.add('ladder', `ladder${i}`)
     gameBoard.appendChild(ladder) 
   }
+
+  //add players
+  pickPlayers()
 }
 
 
 //Pick number of Players
-function pickPlayers(players) {
+function pickPlayers() {
   const square1 = document.querySelector('.square1')
-  const section = document.querySelector('.numPlayers')
-  const gameContainer = document.querySelector('.gameContainer')
 
-  for (var i = 1; i <= players; i++) {
+  for (var i = 1; i <= 2; i++) {
     let player = document.createElement('div')
     player.classList.add('player', `player${i}`)
     square1.appendChild(player)
-  }
 
-  section.style.display = "none"
-  gameContainer.style.height = "100vh"
+  }
 }
 
+//If a player wins
 function checkForWin() {
   if(players[0].position >= 100) {
     setTimeout( () => {
@@ -62,12 +62,16 @@ function checkForWin() {
   } 
 }
 
+
+//Remove board
 function deleteBoard() {
   while (gameBoard.firstChild) {
     gameBoard.removeChild(gameBoard.firstChild)
   }
 }
 
+
+//Reset
 function resetGame() {
   const section = document.querySelector('.numPlayers')
   const gameContainer = document.querySelector('.gameContainer')

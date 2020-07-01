@@ -1,12 +1,19 @@
 window.addEventListener('load', createBoard)
 
-let players = [{
-  name: "Player1",
-  id: 1,
-  position: 1
-}]
+let players = [
+  {
+    name: "Player1",
+    id: 1,
+    position: 1
+  },
+  {
+    name: "Player2",
+    id: 2,
+    position: 1
+  }
+]
 
-let currentPlayerTurn = 0;
+let currentPlayerTurn = false;
 
 function playGame() {
   movePlayer( spin() )

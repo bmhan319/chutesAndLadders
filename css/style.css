@@ -30,8 +30,7 @@ body {
 .gameContainer {
   background-color: #ccc;
   width: 100vw;
-  height: 100vh; /* go back to this later and remove code below */
-  height: calc(100vh - 30px);
+  height: 100vh;
   padding-top: 24px;
   display: flex;
   justify-content: space-around;
@@ -289,8 +288,8 @@ span {
 
 /* Player Tokens */
 .player {
-  height: 30%;
-  width: 30%;
+  height: 40%;
+  width: 40%;
   border: 1px solid #000;
   border-radius: 50%;
   position: absolute;
@@ -306,14 +305,6 @@ span {
 
 .player2 {
   background-color: blue;
-}
-
-.player3 {
-  background-color: red;
-}
-
-.player4 {
-  background-color: orange;
 }
 
 
