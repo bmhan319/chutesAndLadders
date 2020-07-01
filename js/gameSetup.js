@@ -45,14 +45,13 @@ function pickPlayers() {
     let player = document.createElement('div')
     player.classList.add('player', `player${i}`)
     square1.appendChild(player)
-
   }
 }
 
 //If a player wins
 function checkForWin() {
 
-  if(currentPlayer.position >= 10) {
+  if(currentPlayer.position >= 100) {
     setTimeout( () => {
       let reset = confirm(currentPlayer.name + " Won! Would you like to play again")
       if (reset === true) {

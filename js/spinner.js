@@ -73,6 +73,7 @@ function movePlayer(result) {
     oldSquare.removeChild(oldSquare.childNodes[1])
     player.classList.add('player', `player${currentPlayer.id}`)
     newSquare.appendChild(player)
+
   }, 3500 ) 
   return currentPlayer
 }
