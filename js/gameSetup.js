@@ -31,6 +31,13 @@ function createBoard() {
     gameBoard.appendChild(ladder) 
   }
 
+  //make chutes
+  for (var i = 1; i < 11; i++) {
+    let chutes = document.createElement('div')
+    chutes.classList.add('chute', `chute${i}`)
+    gameBoard.appendChild(chutes) 
+  }
+
   //add players
   pickPlayers()
 }
