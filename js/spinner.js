@@ -45,7 +45,6 @@ function spin() {
 
 //Move players around the board
 function movePlayer(result) {
-  let currentPlayer
   let oldPosition
   let oldSquare
 
@@ -75,4 +74,5 @@ function movePlayer(result) {
     player.classList.add('player', `player${currentPlayer.id}`)
     newSquare.appendChild(player)
   }, 3500 ) 
+  return currentPlayer
 }

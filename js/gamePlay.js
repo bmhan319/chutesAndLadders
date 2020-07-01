@@ -14,6 +14,7 @@ let players = [
 ]
 
 let currentPlayerTurn = false;
+let currentPlayer
 
 function playGame() {
   movePlayer( spin() )

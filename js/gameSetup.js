@@ -37,6 +37,7 @@ function createBoard() {
 
 
 //Pick number of Players
+//This was set up in this way to be able to expand to more players if desired
 function pickPlayers() {
   const square1 = document.querySelector('.square1')
 
@@ -50,9 +51,10 @@ function pickPlayers() {
 
 //If a player wins
 function checkForWin() {
-  if(players[0].position >= 100) {
+
+  if(currentPlayer.position >= 10) {
     setTimeout( () => {
-      let reset = confirm("You Won! Would you like to play again")
+      let reset = confirm(currentPlayer.name + " Won! Would you like to play again")
       if (reset === true) {
         resetGame()
       } else {
@@ -73,14 +75,10 @@ function deleteBoard() {
 
 //Reset
 function resetGame() {
-  const section = document.querySelector('.numPlayers')
-  const gameContainer = document.querySelector('.gameContainer')
-  
   deleteBoard()
-  section.style.display = "block"
-  gameContainer.style.height = "height: calc(100vh - 30px)"
-  currentPlayerTurn = 0
+  currentPlayerTurn = false
   players[0].position = 1
+  players[1].position = 1
   createBoard()
 }
 
@@ -99,8 +97,8 @@ function checkLadder() {
   ]
 
   ladder.forEach( (item) => {
-    if (players[0].position === item[0]) {
-      players[0].position = item[1]
+    if (currentPlayer.position === item[0]) {
+      currentPlayer.position = item[1]
     }
   } )
 }
@@ -120,8 +118,8 @@ function checkSlide() {
   ]
 
   slide.forEach( (item) => {
-    if (players[0].position === item[0]) {
-      players[0].position = item[1]
+    if (currentPlayer.position === item[0]) {
+      currentPlayer.position = item[1]
     }
   } )
 }
