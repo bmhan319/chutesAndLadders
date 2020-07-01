@@ -124,6 +124,8 @@ body {
   border: 10px solid green;
   background-color: lightgreen;
   position: relative;
+  min-width: 250px;
+  min-height: 250px;
 }
 
 .spinnerContainer::after {
@@ -227,38 +229,38 @@ span {
 }
 
 .strong1 {
-  top: 68%;
-  left: 50%;
+  top: 58%;
+  left: 40%;
   transform: rotate(120deg);
 }
 
 .strong2 {
-  top: 72%;
-  left: 54%;
+  top: 60%;
+  left: 38%;
   transform: rotate(120deg);
 }
 
 .strong3 {
-  top: 68%;
-  left: 30%;
+  top: 62%;
+  left: 40%;
   transform: rotate(240deg);
 }
 
 .strong4 {
-  top: 72%;
-  left: 54%;
+  top: 58%;
+  left: 38%;
   transform: rotate(120deg);
 }
 
 .strong5 {
-  top: 48%;
-  left: 40%;
+  top: 58%;
+  left: 35%;
   transform: rotate(0deg);
 }
 
 .strong6 {
-  top: 50%;
-  left: 40%;
+  top: 62%;
+  left: 38%;
   transform: rotate(0deg);
 }
 
@@ -274,10 +276,12 @@ span {
   background-color: green;
   box-shadow: 0px 5px 20px  #000; 
   color: #fff;
-  font-size: 2vw;
+  font-size: calc(6px + 1.5vw);  /* sets min font size */
   font-weight: bold;
   cursor: pointer;
   -webkit-text-stroke: 1px #000;
+  min-width:  70px;
+  min-height: 70px;
 }
 
 .spinButton:active {
