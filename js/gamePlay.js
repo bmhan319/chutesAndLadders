@@ -1,5 +1,8 @@
 window.addEventListener('load', createBoard)
 
+let currentPlayerTurn = false;
+let currentPlayer
+let message
 let players = [
   {
     name: "Player1",
@@ -13,12 +16,8 @@ let players = [
   }
 ]
 
-let currentPlayerTurn = false;
-let currentPlayer
-
 function playGame() {
   movePlayer( spin() )
-  checkLadder()
-  checkSlide()
   checkForWin()
+  setTimeout( ()=>chuteLadderPosition(), 4000)
 }

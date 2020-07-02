@@ -6,31 +6,27 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #ccc;
 }
 
 
 /* Temp CSS */
-.askNumPlayers {
-  margin-right: 16px;
-}
-
-.numPlayers {
-  height: 30px;
+.messageContainer {
+  border: 10px solid blue;
+  background-color: lightblue;
+  height: 50px;
+  width: 93vw;
+  margin: 25px auto 0;
+  padding-left: 16px;
   display: flex;
   align-items: center;
 }
 
-.buttonPlayers {
-  height: 28px;
-  margin-right: 16px;
-}
-
-
 /* Game Enviroment */
 .gameContainer {
-  background-color: #ccc;
   width: 100vw;
-  height: 100vh;
+  height: 100vh; /* */
+  height: calc(100vh - 75px);
   padding-top: 24px;
   display: flex;
   justify-content: space-around;
@@ -120,8 +116,6 @@ body {
   align-items: end;
   justify-content: end;
 }
-
-
 
 /* Spinner */
 .spinnerContainer {
@@ -296,6 +290,8 @@ span {
   font-size: 1.8vw;
 }
 
+
+
 /* Player Tokens */
 .player {
   height: 60%;
@@ -429,7 +425,7 @@ span {
 .chute {
   position: absolute;
   z-index: 10;
-  background: url('../img/slide1.png') no-repeat;
+  background: url('../img/slide.png') no-repeat;
   background-position: center;
   background-size: contain;
   z-index: 8

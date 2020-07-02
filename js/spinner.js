@@ -12,7 +12,7 @@ function spin() {
 
   //turn off ability to click while wheel is spinning
   spinButton.style.pointerEvents = 'none'
-  setTimeout( () => {spinButton.style.pointerEvents = 'auto'}, 3100)
+  setTimeout( () => {spinButton.style.pointerEvents = 'auto'}, 4000)
 
   //reduce the 'deg' down to the lowest degree under 361 in order to calculate the spun number
   while (deg > 360) {
@@ -65,6 +65,7 @@ function movePlayer(result) {
   setTimeout( ()=>{
     let newSquare = document.querySelector(`.square${currentPlayer.position}`)
     let player = document.createElement('div')
+    let message = document.querySelector('.message')
     
     if (newSquare === null) {
       newSquare = document.querySelector('.square100')
@@ -73,6 +74,7 @@ function movePlayer(result) {
     oldSquare.removeChild(oldSquare.childNodes[1])
     player.classList.add('player', `player${currentPlayer.id}`)
     newSquare.appendChild(player)
+    message.innerHTML = `${currentPlayer.name} rolled a ${result} and moved to square ${currentPlayer.position}`
 
   }, 3500 ) 
   return currentPlayer

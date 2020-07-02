@@ -39,35 +39,23 @@ function createBoard() {
   }
 
   //add players
-  pickPlayers()
+  pickPlayers(2)
+
+  //message
+  document.querySelector('.message').innerHTML = "Chutes and Ladders"
 }
 
 
 //Pick number of Players
 //This was set up in this way to be able to expand to more players if desired
-function pickPlayers() {
+function pickPlayers(numPlayers) {
   const square1 = document.querySelector('.square1')
 
-  for (var i = 1; i <= 2; i++) {
+  for (var i = 1; i <= numPlayers; i++) {
     let player = document.createElement('div')
     player.classList.add('player', `player${i}`)
     square1.appendChild(player)
   }
-}
-
-//If a player wins
-function checkForWin() {
-
-  if(currentPlayer.position >= 100) {
-    setTimeout( () => {
-      let reset = confirm(currentPlayer.name + " Won! Would you like to play again")
-      if (reset === true) {
-        resetGame()
-      } else {
-        return
-      }
-    }, 3500 )
-  } 
 }
 
 
@@ -89,8 +77,31 @@ function resetGame() {
 }
 
 
-function checkLadder() {
-  let ladder = [
+//If a player wins
+function checkForWin() {
+
+  if(currentPlayer.position >= 100) {
+    setTimeout( () => {
+      let reset = confirm(currentPlayer.name + " Won! Would you like to play again")
+      if (reset === true) {
+        resetGame()
+      } else {
+        return
+      }
+    }, 3500 )
+  } 
+}
+
+
+function chuteLadderPosition() {
+  let oldPosition = currentPlayer.position
+  let oldSquare = document.querySelector(`.square${oldPosition}`)
+  let player = document.createElement('div')
+  let message = document.querySelector('.message')
+  let newSquare
+
+  let obstacles = [
+    //Ladder Positions
     [2,38],
     [4,14],
     [9,31],
@@ -99,18 +110,8 @@ function checkLadder() {
     [36,44],
     [51,67],
     [71,91],
-    [80,100]
-  ]
-
-  ladder.forEach( (item) => {
-    if (currentPlayer.position === item[0]) {
-      currentPlayer.position = item[1]
-    }
-  } )
-}
-
-function checkSlide() {
-  let slide = [
+    [80,100],
+    //Chutes Positions
     [16,6],
     [47,26],
     [49,11],
@@ -123,9 +124,26 @@ function checkSlide() {
     [98,78]
   ]
 
-  slide.forEach( (item) => {
+  obstacles.forEach( (item) => {
+    let obstacle
+    let direction
+
+    if (item[0] > item[1]) {
+      obstacle = "chute"
+      direction = "down"
+    } else {
+      obstacle = "ladder"
+      direction = "up"
+    }
+
     if (currentPlayer.position === item[0]) {
       currentPlayer.position = item[1]
+      message.innerHTML = message.innerHTML + `, you landed on a ${obstacle} and moved ${direction} to square ${currentPlayer.position}`
     }
   } )
+
+  newSquare = document.querySelector(`.square${currentPlayer.position}`)
+  oldSquare.removeChild(oldSquare.childNodes[1])
+  player.classList.add('player', `player${currentPlayer.id}`)
+  newSquare.appendChild(player)
 }
