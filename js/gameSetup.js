@@ -109,20 +109,23 @@ function chuteLadderPosition() {
   ]
 
   obstacles.forEach( (item) => {
+    let reaction
     let obstacle
     let direction
 
     if (item[0] > item[1]) {
+      reaction = "Uh-oh!"
       obstacle = "chute"
-      direction = "down"
+      direction = "slid down"
     } else {
+      reaction = "Yeah!"
       obstacle = "ladder"
-      direction = "up"
+      direction = "climbed up"
     }
 
     if (currentPlayer.position === item[0]) {
       currentPlayer.position = item[1]
-      message.innerHTML = message.innerHTML + `, you landed on a ${obstacle} and moved ${direction} to square ${currentPlayer.position}`
+      message.innerHTML = message.innerHTML + `  ${reaction}  You landed on a ${obstacle} and ${direction} to square ${currentPlayer.position}.`
     }
   } )
 

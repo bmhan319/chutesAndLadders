@@ -1,28 +1,28 @@
 window.addEventListener('load', createBoard)
 
-//let currentPlayerTurn = false
+//General Variables
 let numPlayers = 3
 let currentPlayerTurn = 0
 let currentPlayer
 let message
 let players = [
   {
-    name: "Player1",
+    name: "Green Player",
     id: 1,
     position: 1
   },
   {
-    name: "Player2",
+    name: "Blue Player",
     id: 2,
     position: 1
   },
   {
-    name: "Player3",
+    name: "Red Player",
     id: 3,
     position: 1
   },
   {
-    name: "Player4",
+    name: "Purple Player",
     id: 4,
     position: 1
   }

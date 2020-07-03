@@ -72,7 +72,7 @@ function movePlayer(result) {
     oldSquare.removeChild(oldSquare.childNodes[1])
     player.classList.add('player', `player${currentPlayer.id}`)
     newSquare.appendChild(player)
-    message.innerHTML = `${currentPlayer.name} rolled a ${result} and moved to square ${currentPlayer.position}`
+    message.innerHTML = `${currentPlayer.name} rolled a ${result} and moved to square ${currentPlayer.position}.`
 
   }, 3500 ) 
   return

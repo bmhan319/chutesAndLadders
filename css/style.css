@@ -22,6 +22,10 @@ body {
   align-items: center;
 }
 
+.message {
+  font-size: 1rem;
+}
+
 /* Game Enviroment */
 .gameContainer {
   width: 100vw;
@@ -300,7 +304,6 @@ span {
   border-radius: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-  z-index: 20;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -479,10 +482,10 @@ span {
 }
 
 .chute4 { 
-  width: 8vw;
+  width: 9vw;
   height: 8vw;
   bottom: 25.5vw;
-  right: 18vw;
+  right: 16.5vw;
   transform: skew(75deg, -5deg) scale(-1, .5);
 }
 
