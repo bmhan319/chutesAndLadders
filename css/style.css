@@ -23,7 +23,7 @@ body {
 }
 
 .message {
-  font-size: 1rem;
+  font-size: 1.5vw;
 }
 
 /* Game Enviroment */
@@ -292,6 +292,10 @@ span {
   height: 7.75vw;
   width: 7.75vw;
   font-size: 1.8vw;
+}
+
+.spinButton:focus {
+  outline: 1px dotted #000;
 }
 
 
