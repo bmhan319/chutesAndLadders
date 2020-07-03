@@ -12,7 +12,7 @@ function spin() {
 
   //turn off ability to click while wheel is spinning
   spinButton.style.pointerEvents = 'none'
-  setTimeout( () => {spinButton.style.pointerEvents = 'auto'}, 4000)
+  setTimeout( () => {spinButton.style.pointerEvents = 'auto'}, 4200)
 
   //reduce the 'deg' down to the lowest degree under 361 in order to calculate the spun number
   while (deg > 360) {

@@ -18,6 +18,6 @@ let players = [
 
 function playGame() {
   movePlayer( spin() )
-  checkForWin()
   setTimeout( ()=>chuteLadderPosition(), 4000)
+  setTimeout( ()=>checkForWin(), 4200)
 }

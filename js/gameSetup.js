@@ -77,22 +77,6 @@ function resetGame() {
 }
 
 
-//If a player wins
-function checkForWin() {
-
-  if(currentPlayer.position >= 100) {
-    setTimeout( () => {
-      let reset = confirm(currentPlayer.name + " Won! Would you like to play again")
-      if (reset === true) {
-        resetGame()
-      } else {
-        return
-      }
-    }, 3500 )
-  } 
-}
-
-
 function chuteLadderPosition() {
   let oldPosition = currentPlayer.position
   let oldSquare = document.querySelector(`.square${oldPosition}`)
@@ -146,4 +130,22 @@ function chuteLadderPosition() {
   oldSquare.removeChild(oldSquare.childNodes[1])
   player.classList.add('player', `player${currentPlayer.id}`)
   newSquare.appendChild(player)
+}
+
+
+//If a player wins
+function checkForWin() {
+
+  if(currentPlayer.position >= 10) {
+    setTimeout( () => {
+      let reset = confirm(currentPlayer.name + " Won! Would you like to play again")
+      if (reset === true) {
+        resetGame()
+      } else {
+        const spinButton = document.querySelector('.spinButton')
+        spinButton.style.pointerEvents = 'none'
+        return
+      }
+    }, 500 )
+  } 
 }
