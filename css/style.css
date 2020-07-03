@@ -10,7 +10,8 @@ body {
 }
 
 
-/* Temp CSS */
+
+/* -----Messages----- */
 .messageContainer {
   border: 10px solid blue;
   background-color: lightblue;
@@ -26,7 +27,9 @@ body {
   font-size: 1.5vw;
 }
 
-/* Game Enviroment */
+
+
+/* -----Game Enviroment----- */
 .gameContainer {
   width: 100vw;
   height: 100vh; /* */
@@ -38,7 +41,7 @@ body {
 }
 
 
-/* Game Board */
+/* -----Game Board----- */
 .gameBoard {
   width: 55vw;
   height: 55vw;
@@ -64,64 +67,64 @@ body {
   border: 1px solid #000;
   position: relative;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .square:nth-child(odd) {
   background-color: yellow;
 }
 
+.square19,
+.square27,
+.square52,
+.square56,
+.square65,
+.square66,
+.square73,
+.square78,
+.square81,
+.square86 {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.square22,
+.square33,
+.square34,
+.square36,
+.square54,
+.square55,
+.square67 {
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.square3,
+.square5,
+.square6,
+.square7,
+.square10,
+.square11,
+.square14,
+.square18,
+.square23,
+.square30,
+.square39,
+.square51,
+.square53,
+.square58,
+.square74 {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 .number {
-  width: 100%;
   font-size: .85rem;
   padding: .1rem;
 }
 
-.number19,
-.number52,
-.number53,
-.number65,
-.number66,
-.number73,
-.number78,
-.number81,
-.number86 {
-  display: flex;
-  align-items: end;
-  justify-content: start;
-}
 
-.number22,
-.number33,
-.number34,
-.number36,
-.number54,
-.number55,
-.number67 {
-  display: flex;
-  align-items: flex-start;
-  justify-content: end;
-}
 
-.number3,
-.number5,
-.number6,
-.number10,
-.number11,
-.number14,
-.number18,
-.number23,
-.number30,
-.number39,
-.number51,
-.number58,
-.number74 {
-  display: flex;
-  align-items: end;
-  justify-content: end;
-}
-
-/* Spinner */
+/* -----Spinner----- */
 .spinnerContainer {
   width: 30vw;
   height: 30vw;
@@ -132,6 +135,7 @@ body {
   min-height: 250px;
 }
 
+/* arrow */
 .spinnerContainer::after {
   position: absolute;
   content: '';
@@ -170,6 +174,7 @@ span {
   position: absolute;
 }
 
+/* colored segments */
 .triangle1 {
   clip-path: polygon(50% 13%, 0 100%, 100% 100%);
   background-color: purple;
@@ -218,6 +223,8 @@ span {
   transform: rotate(60deg) translate(-18% ,-32%);
 }
 
+
+/* numbers */
 .strong {
   position: absolute;
   width: 30px;
@@ -257,8 +264,8 @@ span {
 }
 
 .strong5 {
-  top: 58%;
-  left: 35%;
+  top: 62%;
+  left: 40%;
   transform: rotate(0deg);
 }
 
@@ -268,6 +275,7 @@ span {
   transform: rotate(0deg);
 }
 
+/* button */
 .spinButton {
   position: absolute;
   top: 50%;
@@ -300,7 +308,7 @@ span {
 
 
 
-/* Player Tokens */
+/* -----Player Tokens----- */
 .player {
   height: 60%;
   width: 60%;
@@ -360,7 +368,7 @@ span {
 }
 
 
-/* Ladders */
+/* -----Ladders----- */
 .ladder {
   position: absolute;
   z-index: 10;
@@ -451,7 +459,7 @@ span {
   transform: rotate(11deg);
 }
 
-/* Chutes */
+/* -----Chutes----- */
 .chute {
   position: absolute;
   z-index: 10;

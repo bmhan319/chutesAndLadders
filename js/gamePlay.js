@@ -11,7 +11,7 @@ window.addEventListener('load', createBoard)
 
 //General Variables
 let gameBoard = document.querySelector('.gameBoard')
-let numPlayers = 3
+let numPlayers = 2
 let currentPlayerTurn = 0
 let currentPlayer
 let message
