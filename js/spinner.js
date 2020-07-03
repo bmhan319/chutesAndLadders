@@ -48,19 +48,17 @@ function movePlayer(result) {
   let oldPosition
   let oldSquare
 
-  if (currentPlayerTurn === false) {
-    currentPlayer = players[0]
-  } else {
-    currentPlayer = players[1]
-  }
-
+  //determine whose turn it is
+  playersTurn()
+  if (currentPlayerTurn === numPlayers) {
+    currentPlayerTurn = 0
+  } 
   oldPosition = currentPlayer.position
   oldSquare = document.querySelector(`.square${oldPosition}`)
   currentPlayer.position += result
-  currentPlayerTurn = !currentPlayerTurn
 
   
-  //wait 3.5 seconds before moving pieces to give the spinner enough time to stop
+  //wait 3.5 seconds before moving token to give the spinner enough time to stop
   //spinner spins for 3 secs.
   setTimeout( ()=>{
     let newSquare = document.querySelector(`.square${currentPlayer.position}`)
@@ -77,5 +75,28 @@ function movePlayer(result) {
     message.innerHTML = `${currentPlayer.name} rolled a ${result} and moved to square ${currentPlayer.position}`
 
   }, 3500 ) 
-  return currentPlayer
+  return
+}
+
+
+//Determine Players Turn 
+function playersTurn() {
+  switch (currentPlayerTurn) {
+    case 0:
+      currentPlayer = players[0]
+      currentPlayerTurn++
+      break;
+    case 1: 
+      currentPlayer = players[1]
+      currentPlayerTurn++
+      break;
+    case 2:
+      currentPlayer = players[2]
+      currentPlayerTurn++
+      break;
+    case 3: 
+      currentPlayer = players[3]
+      currentPlayerTurn++
+      break;
+  }
 }

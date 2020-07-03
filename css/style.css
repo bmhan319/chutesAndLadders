@@ -299,7 +299,6 @@ span {
   border: 1px solid #000;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
   transform: translate(-50%, -50%);
   z-index: 20;
   color: #fff;
@@ -313,6 +312,7 @@ span {
   background-color: green;
   z-index: 30;
   left: 55%;
+  top: 55%;
 }
 
 .player1::after {
@@ -321,12 +321,35 @@ span {
 
 .player2 {
   background-color: blue;
-  z-index: 25;
+  z-index: 29;
     left: 45%;
+    top: 55%;
 }
 
 .player2::after {
   content: '2'
+}
+
+.player3 {
+  background-color: red;
+  z-index: 28;
+  left: 55%;
+  top: 40%;
+}
+
+.player3::after {
+  content: '3'
+}
+
+.player4 {
+  background-color: purple;
+  z-index: 27;
+  left: 40%;
+  top: 40%;
+}
+
+.player4::after {
+  content: '4'
 }
 
 

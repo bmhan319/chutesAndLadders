@@ -39,7 +39,7 @@ function createBoard() {
   }
 
   //add players
-  pickPlayers(2)
+  pickPlayers(numPlayers)
 
   //message
   document.querySelector('.message').innerHTML = "Chutes and Ladders"
@@ -47,7 +47,7 @@ function createBoard() {
 
 
 //Pick number of Players
-//This was set up in this way to be able to expand to more players if desired
+//This was set up in this way to be able to expand to up to 4 players if desired
 function pickPlayers(numPlayers) {
   const square1 = document.querySelector('.square1')
 
@@ -136,7 +136,7 @@ function chuteLadderPosition() {
 //If a player wins
 function checkForWin() {
 
-  if(currentPlayer.position >= 10) {
+  if(currentPlayer.position >= 100) {
     setTimeout( () => {
       let reset = confirm(currentPlayer.name + " Won! Would you like to play again")
       if (reset === true) {
