@@ -52,12 +52,13 @@ body {
 
 /* -----Game Enviroment----- */
 .gameContainer {
-  width: 100vw;
-  height: 100vh; /* */
+  width: 93vw;
+  height: 100vh; 
   height: calc(100vh - 75px);
   padding-top: 24px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   overflow: hidden;
 }
 

@@ -51,6 +51,7 @@ function pickPlayers(num) {
   numPlayers = num
   spinButton.style.pointerEvents = "auto"
   messageContainer.style.display = "none"
+  message.innerHTML = "Player1: Spin to start the game."
 
   for (let i = 1; i <= numPlayers; i++) {
     const player = document.createElement('div')
