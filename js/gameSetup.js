@@ -1,19 +1,18 @@
-let gameBoard = document.querySelector('.gameBoard')
-
 //Create Game Board
 function createBoard() {
   
   //making the rows
-  for (var i = 10; i >= 1; i-- ) {
-    let row = document.createElement('div')
+  for (let i = 10; i >= 1; i-- ) {
+    const row = document.createElement('div')
     row.classList.add('row', `row${i}`)
 
     //making the columns
-    for (var j = 10; j > 0; j--) {
-      let square = document.createElement('div')
-      let number = document.createElement('h3')
-      let boxNumber = (i*10) + j - 10
-
+    for (let j = 10; j > 0; j--) {
+      const square = document.createElement('div')
+      const number = document.createElement('h3')
+      const boxNumber = (i*10) + j - 10
+      
+      //numbering each square
       square.classList.add('square', `square${boxNumber}`)
       number.classList.add('number', `number${boxNumber}`)
       number.innerHTML = boxNumber
@@ -21,19 +20,20 @@ function createBoard() {
       square.appendChild(number)
       row.appendChild(square)
     }
+    
     gameBoard.appendChild(row)
   }
 
   //make ladder
-  for (var i = 1; i < 10; i++) {
-    let ladder = document.createElement('div')
+  for (let i = 1; i < 10; i++) {
+    const ladder = document.createElement('div')
     ladder.classList.add('ladder', `ladder${i}`)
     gameBoard.appendChild(ladder) 
   }
 
   //make chutes
-  for (var i = 1; i < 11; i++) {
-    let chutes = document.createElement('div')
+  for (let i = 1; i < 11; i++) {
+    const chutes = document.createElement('div')
     chutes.classList.add('chute', `chute${i}`)
     gameBoard.appendChild(chutes) 
   }
@@ -47,19 +47,19 @@ function createBoard() {
 
 
 //Pick number of Players
-//This was set up in this way to be able to expand to up to 4 players if desired
+//Able to expand to up to 4 players if desired
 function pickPlayers(numPlayers) {
   const square1 = document.querySelector('.square1')
 
-  for (var i = 1; i <= numPlayers; i++) {
-    let player = document.createElement('div')
+  for (let i = 1; i <= numPlayers; i++) {
+    const player = document.createElement('div')
     player.classList.add('player', `player${i}`)
     square1.appendChild(player)
   }
 }
 
 
-//Remove board
+//Delete game board
 function deleteBoard() {
   while (gameBoard.firstChild) {
     gameBoard.removeChild(gameBoard.firstChild)
@@ -67,24 +67,27 @@ function deleteBoard() {
 }
 
 
-//Reset
+//Reset game
 function resetGame() {
   deleteBoard()
-  currentPlayerTurn = false
+  currentPlayerTurn = 0
   players[0].position = 1
   players[1].position = 1
+  players[2].position = 1
+  players[3].position = 1
+  currentPlayer = ""
+  message = "Chutes and Ladders"
   createBoard()
 }
 
-
+//Checking to see if player lands on a chute or ladder square
 function chuteLadderPosition() {
+  const player = document.createElement('div')
+  const message = document.querySelector('.message')
   let oldPosition = currentPlayer.position
   let oldSquare = document.querySelector(`.square${oldPosition}`)
-  let player = document.createElement('div')
-  let message = document.querySelector('.message')
   let newSquare
-
-  let obstacles = [
+  const obstacles = [
     //Ladder Positions
     [2,38],
     [4,14],
@@ -108,6 +111,7 @@ function chuteLadderPosition() {
     [98,78]
   ]
 
+  //Assign message fragments for each obstacle
   obstacles.forEach( (item) => {
     let reaction
     let obstacle
@@ -123,12 +127,14 @@ function chuteLadderPosition() {
       direction = "climbed up"
     }
 
+    //Display appropriate message and assign new token position depending on type of obstacle encountered
     if (currentPlayer.position === item[0]) {
       currentPlayer.position = item[1]
       message.innerHTML = message.innerHTML + `  ${reaction}  You landed on a ${obstacle} and ${direction} to square ${currentPlayer.position}.`
     }
   } )
 
+  //remove token from old spot and move token to new square
   newSquare = document.querySelector(`.square${currentPlayer.position}`)
   oldSquare.removeChild(oldSquare.childNodes[1])
   player.classList.add('player', `player${currentPlayer.id}`)
@@ -136,10 +142,12 @@ function chuteLadderPosition() {
 }
 
 
-//If a player wins
+//Check to see if player wins
 function checkForWin() {
 
+  //If players position is 100 or greater
   if(currentPlayer.position >= 100) {
+    //After 1/2 second, display winner message
     setTimeout( () => {
       let reset = confirm(currentPlayer.name + " Won! Would you like to play again")
       if (reset === true) {

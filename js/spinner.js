@@ -10,7 +10,9 @@ function spin() {
   //spin the wheel
   document.getElementById('box').style.transform = 'scale(1.3) rotate(' + deg + 'deg)'
 
-  //turn off ability to click while wheel is spinning
+  //turn off ability to click while wheel is spinning and tokens are moving
+  //set for 4.2 seconds.
+  //wheel spins for 3 secs, token moving starts at 3.5 secs, 
   spinButton.style.pointerEvents = 'none'
   setTimeout( () => {spinButton.style.pointerEvents = 'auto'}, 4200)
 
@@ -52,7 +54,9 @@ function movePlayer(result) {
   playersTurn()
   if (currentPlayerTurn === numPlayers) {
     currentPlayerTurn = 0
-  } 
+  }
+
+  //setting variables depending on which players turn it is
   oldPosition = currentPlayer.position
   oldSquare = document.querySelector(`.square${oldPosition}`)
   currentPlayer.position += result
@@ -65,6 +69,7 @@ function movePlayer(result) {
     let player = document.createElement('div')
     let message = document.querySelector('.message')
     
+    //if token goes beyond square 100, set the square to be 100
     if (newSquare === null) {
       newSquare = document.querySelector('.square100')
     }
@@ -79,7 +84,7 @@ function movePlayer(result) {
 }
 
 
-//Determine Players Turn 
+//Determine Which Players Turn 
 function playersTurn() {
   switch (currentPlayerTurn) {
     case 0:
