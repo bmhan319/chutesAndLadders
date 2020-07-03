@@ -38,18 +38,19 @@ function createBoard() {
     gameBoard.appendChild(chutes) 
   }
 
-  //add players
-  pickPlayers(numPlayers)
-
   //message
-  document.querySelector('.message').innerHTML = "Chutes and Ladders"
+  message.innerHTML = "Chutes and Ladders"
 }
 
 
 //Pick number of Players
 //Able to expand to up to 4 players if desired
-function pickPlayers(numPlayers) {
+function pickPlayers(num) {
   const square1 = document.querySelector('.square1')
+  const messageContainer = document.querySelector('.numPlayersContainer')
+  numPlayers = num
+  spinButton.style.pointerEvents = "auto"
+  messageContainer.style.display = "none"
 
   for (let i = 1; i <= numPlayers; i++) {
     const player = document.createElement('div')
@@ -69,21 +70,24 @@ function deleteBoard() {
 
 //Reset game
 function resetGame() {
+  const messageContainer = document.querySelector('.numPlayersContainer')
+  message.innerHTML = "Chutes and Ladders"
   deleteBoard()
+  numPlayers = 0
   currentPlayerTurn = 0
+  currentPlayer = ""
   players[0].position = 1
   players[1].position = 1
   players[2].position = 1
   players[3].position = 1
-  currentPlayer = ""
-  message = "Chutes and Ladders"
   createBoard()
+  spinButton.style.pointerEvents = "none"
+  messageContainer.style.display = "flex"
 }
 
 //Checking to see if player lands on a chute or ladder square
 function chuteLadderPosition() {
   const player = document.createElement('div')
-  const message = document.querySelector('.message')
   let oldPosition = currentPlayer.position
   let oldSquare = document.querySelector(`.square${oldPosition}`)
   let newSquare

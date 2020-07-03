@@ -21,6 +21,7 @@ body {
   padding-left: 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .message {
@@ -28,6 +29,26 @@ body {
 }
 
 
+.numPlayersContainer {
+  display: flex;
+  margin-right: 16px;
+}
+
+.numPlayersAsk {
+  padding: 0 16px;
+}
+
+.playerButton {
+  width: 30px;
+  background-color: blue;
+  border: 1px solid #000;
+  color: #fff;
+  box-shadow: 2px 2px 2px #888;
+}
+
+.playerButton:active {
+  box-shadow: 0px 0px 0px #888;
+}
 
 /* -----Game Enviroment----- */
 .gameContainer {
@@ -294,6 +315,7 @@ span {
   -webkit-text-stroke: 1px #000;
   min-width:  70px;
   min-height: 70px;
+  pointer-events: none;
 }
 
 .spinButton:active {

@@ -1,6 +1,5 @@
 //Spin the weheel
 function spin() {
-  const spinButton = document.querySelector('.spinButton')
   // min and max need a wide range in order for wheel to spin 
   let min = 1024
   let max = 9999
@@ -67,7 +66,6 @@ function movePlayer(result) {
   setTimeout( ()=>{
     let newSquare = document.querySelector(`.square${currentPlayer.position}`)
     let player = document.createElement('div')
-    let message = document.querySelector('.message')
     
     //if token goes beyond square 100, set the square to be 100
     if (newSquare === null) {

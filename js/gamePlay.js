@@ -9,12 +9,13 @@
 //Load GameBoard on load
 window.addEventListener('load', createBoard)
 
-//General Variables
-let gameBoard = document.querySelector('.gameBoard')
-let numPlayers = 2
+//General Game Variables
+const gameBoard = document.querySelector('.gameBoard')
+const message = document.querySelector('.message')
+const spinButton = document.querySelector('.spinButton')
+let numPlayers = 0
 let currentPlayerTurn = 0
 let currentPlayer
-let message
 let players = [
   {
     name: "Green Player",
