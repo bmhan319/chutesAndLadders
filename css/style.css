@@ -50,6 +50,10 @@ body {
   box-shadow: 0px 0px 0px #888;
 }
 
+.playerButton:focus {
+  outline: 1px solid #fff; 
+}
+
 /* -----Game Enviroment----- */
 .gameContainer {
   width: 93vw;
