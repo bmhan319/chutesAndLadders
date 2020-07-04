@@ -330,8 +330,8 @@ span {
 }
 
 .spinButton:focus {
-  outline: 0;
-  box-shadow: 0 0 13pt 5pt blue; 
+  outline: 0px dotted #ccc;
+  box-shadow: 0 0 5px 1px blue;
 }
 
 
