@@ -136,14 +136,13 @@ function chuteLadderPosition() {
     if (currentPlayer.position === item[0]) {
       currentPlayer.position = item[1]
       message.innerHTML = message.innerHTML + `  ${reaction}  You landed on a ${obstacle} and ${direction} to square ${currentPlayer.position}.`
+      //remove token from old spot and move token to new square
+      newSquare = document.querySelector(`.square${currentPlayer.position}`)
+      oldSquare.removeChild(oldSquare.childNodes[1])
+      player.classList.add('player', `player${currentPlayer.id}`)
+      newSquare.appendChild(player)
     }
   } )
-
-  //remove token from old spot and move token to new square
-  newSquare = document.querySelector(`.square${currentPlayer.position}`)
-  oldSquare.removeChild(oldSquare.childNodes[1])
-  player.classList.add('player', `player${currentPlayer.id}`)
-  newSquare.appendChild(player)
 }
 
 
